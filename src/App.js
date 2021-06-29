@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Loader from "./components/loader/loader";
+import Weather from "./components/weather/weather";
 import "./App.scss";
 
 function App() {
   const [long, setLon] = useState("");
   const [latt, setLat] = useState("");
-  const [weather, setWeather] = useState("");
+  const [weatherData, setWeatherData] = useState("");
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -22,12 +24,16 @@ function App() {
           fetch(`https://www.metaweather.com//api/location/${result[0].woeid}/`)
             .then((res) => res.json())
             .then((data) => {
-              setWeather(data);
+              setWeatherData(data);
             });
         });
   }, [latt, long]);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      {weatherData ? <Weather weatherData={weatherData} /> : <Loader />}
+    </div>
+  );
 }
 
 export default App;
