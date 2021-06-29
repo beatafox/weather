@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./components/loader/loader";
 import Weather from "./components/weather/weather";
-import "./App.scss";
 
 function App() {
   const [long, setLon] = useState("");
