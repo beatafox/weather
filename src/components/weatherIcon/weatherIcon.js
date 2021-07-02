@@ -1,5 +1,4 @@
 import React from "react";
-import "./weatherIcon.scss";
 import Clear from "../../assets/icons/clear.svg";
 import Hail from "../../assets/icons/hail.svg";
 import HeavyCloud from "../../assets/icons/heavy-cloud.svg";
@@ -32,7 +31,7 @@ function weatherIcon(weatherState) {
       }
     </>
   );
-  return <div> {icon}</div>;
+  return <> {icon}</>;
 }
 
 export default weatherIcon;

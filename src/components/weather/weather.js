@@ -10,11 +10,13 @@ const Weather = ({ weatherData }) => {
     <>
       <div className="weather-wrapper">
         <div> {city}</div>
-        {weatherIcon(forecast.weather_state_abbr)}
-        <div> {forecast.weather_state_name}</div>
-        <div>{formatNumber(forecast.the_temp)}</div>
+        <div className="weather-temp">
+          {weatherIcon(forecast.weather_state_abbr)}
+          <div> {formatNumber(forecast.the_temp)}</div>
+        </div>
+        <div className="weather-name">{forecast.weather_state_name}</div>
         <div> Max: {formatNumber(forecast.max_temp)}</div>
-        <div>Min:{formatNumber(forecast.min_temp)}</div>
+        <div>Min: {formatNumber(forecast.min_temp)}</div>
       </div>
     </>
   );
