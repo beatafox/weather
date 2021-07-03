@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./search.scss";
 
-const Search = () => {
+const Search = ({ setWeatherData }) => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
 
@@ -21,10 +21,20 @@ const Search = () => {
     }
   }, [term]);
 
+  const handleClick = (woeid) => {
+    fetch(`https://www.metaweather.com//api/location/${woeid}/`)
+      .then((res) => res.json())
+      .then((data) => {
+        setWeatherData(data);
+      });
+  };
+
   const searchResultsMap = results.map((result) => {
     return (
       <div className="search-item" key={result.title}>
-        <button>{result.title}</button>
+        <button onClick={(e) => handleClick(result.woeid)}>
+          {result.title}
+        </button>
       </div>
     );
   });
