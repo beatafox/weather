@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 It displays current weather based on users location
 
+## If you have a CORS error locally
+
+install Allow CORS: Access-Control-Allow-Origin extension
+
 ## Available Scripts
 
 In the project directory, you can run:
