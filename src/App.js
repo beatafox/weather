@@ -24,6 +24,9 @@ function App() {
             .then((res) => res.json())
             .then((data) => {
               setWeatherData(data);
+            })
+            .catch((e) => {
+              console.log(e);
             });
         });
   }, [latt, long]);
@@ -32,7 +35,7 @@ function App() {
     <div className="App">
       {weatherData ? (
         <>
-          <Weather weatherData={weatherData} />{" "}
+          <Weather weatherData={weatherData} />
           <Search setWeatherData={setWeatherData} />
         </>
       ) : (

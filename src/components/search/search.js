@@ -12,6 +12,9 @@ const Search = ({ setWeatherData }) => {
         .then((res) => res.json())
         .then((data) => {
           setResults(data);
+        })
+        .catch((e) => {
+          console.log(e);
         });
     };
     // condition for not searching empty string
@@ -25,12 +28,15 @@ const Search = ({ setWeatherData }) => {
       .then((res) => res.json())
       .then((data) => {
         setWeatherData(data);
+      })
+      .catch((e) => {
+        console.log(e);
       });
   };
 
   const searchResultsMap = results.map((result) => {
     return (
-      <div className="search-item" key={result.title}>
+      <div className="search-item" key={result.woeid}>
         <button onClick={(e) => handleClick(result.woeid)}>
           {result.title}
         </button>
