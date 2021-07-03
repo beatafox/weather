@@ -10,6 +10,7 @@ function App() {
   const [weatherData, setWeatherData] = useState("");
 
   useEffect(() => {
+    // set longitude and lattitude when user accepts locating his position in browser
     navigator.geolocation.getCurrentPosition(function (position) {
       setLon(position.coords.longitude);
       setLat(position.coords.latitude);
@@ -17,9 +18,11 @@ function App() {
 
     latt &&
       long &&
+      // get city code from api
       fetch(`${configData.apiUrl}search/?lattlong=${latt},${long}`)
         .then((response) => response.json())
         .then((result) => {
+          // get weather data based on city code
           fetch(`${configData.apiUrl}${result[0].woeid}/`)
             .then((res) => res.json())
             .then((data) => {

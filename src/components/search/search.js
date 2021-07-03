@@ -8,6 +8,7 @@ const Search = ({ setWeatherData }) => {
 
   useEffect(() => {
     const search = async () => {
+      // get cities from api based on search term
       await fetch(`${configData.apiUrl}search/?query=${term}`)
         .then((res) => res.json())
         .then((data) => {
@@ -24,6 +25,7 @@ const Search = ({ setWeatherData }) => {
   }, [term]);
 
   const handleClick = (woeid) => {
+    // fetch weather data when use clicks on one of the search results
     fetch(`${configData.apiUrl}${woeid}/`)
       .then((res) => res.json())
       .then((data) => {
@@ -34,6 +36,7 @@ const Search = ({ setWeatherData }) => {
       });
   };
 
+  // map the results form api fetch
   const searchResultsMap = results.map((result) => {
     return (
       <div className="search-item" key={result.woeid}>

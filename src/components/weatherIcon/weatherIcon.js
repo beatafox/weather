@@ -12,7 +12,7 @@ import Thunderstorm from "../../assets/icons/thunderstorm.svg";
 
 function weatherIcon(weatherState) {
   const key = weatherState?.toUpperCase();
-
+  // display weather icon based on weather_state_abbr from data
   let icon = (
     <>
       {
