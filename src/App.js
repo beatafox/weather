@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Search from "./components/search/search";
 import Loader from "./components/loader/loader";
 import Weather from "./components/weather/weather";
 
@@ -30,7 +31,14 @@ function App() {
 
   return (
     <div className="App">
-      {weatherData ? <Weather weatherData={weatherData} /> : <Loader />}
+      {weatherData ? (
+        <>
+          <Weather weatherData={weatherData} />{" "}
+          <Search setWeatherData={setWeatherData} />
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }
