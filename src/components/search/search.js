@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import configData from "../../config.json";
 import "./search.scss";
 
 const Search = ({ setWeatherData }) => {
@@ -7,9 +8,7 @@ const Search = ({ setWeatherData }) => {
 
   useEffect(() => {
     const search = async () => {
-      await fetch(
-        `https://www.metaweather.com/api/location/search/?query=${term}`
-      )
+      await fetch(`${configData.apiUrl}search/?query=${term}`)
         .then((res) => res.json())
         .then((data) => {
           setResults(data);
@@ -22,7 +21,7 @@ const Search = ({ setWeatherData }) => {
   }, [term]);
 
   const handleClick = (woeid) => {
-    fetch(`https://www.metaweather.com//api/location/${woeid}/`)
+    fetch(`${configData.apiUrl}${woeid}/`)
       .then((res) => res.json())
       .then((data) => {
         setWeatherData(data);

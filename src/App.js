@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import configData from "./config.json";
 import Search from "./components/search/search";
 import Loader from "./components/loader/loader";
 import Weather from "./components/weather/weather";
@@ -16,12 +17,10 @@ function App() {
 
     latt &&
       long &&
-      fetch(
-        `https://www.metaweather.com/api/location/search/?lattlong=${latt},${long}`
-      )
+      fetch(`${configData.apiUrl}search/?lattlong=${latt},${long}`)
         .then((response) => response.json())
         .then((result) => {
-          fetch(`https://www.metaweather.com//api/location/${result[0].woeid}/`)
+          fetch(`${configData.apiUrl}${result[0].woeid}/`)
             .then((res) => res.json())
             .then((data) => {
               setWeatherData(data);
