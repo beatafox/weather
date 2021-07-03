@@ -1,10 +1,15 @@
 @import "../../assets/fonts/fonts";
+@import "../../assets/colors";
+
 .weather-wrapper {
   margin-top: 50px;
-  color: lightseagreen;
+  margin-bottom: 50px;
+  color: $green;
   text-align: center;
   font-family: $caviarDreams;
-
+  .weather-location {
+    color: $pink;
+  }
   .weather-temp {
     font-size: 30px;
     display: inline-flex;
@@ -13,6 +18,5 @@
 
   .weather-name {
     font-size: 20px;
-    color: rosybrown;
   }
 }

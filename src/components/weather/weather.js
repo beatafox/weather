@@ -1,6 +1,6 @@
-import "./weather.scss";
 import { formatNumber } from "./utils";
 import weatherIcon from "../weatherIcon/weatherIcon";
+import "./weather.scss";
 
 const Weather = ({ weatherData }) => {
   const forecast = weatherData.consolidated_weather[0];
@@ -12,10 +12,10 @@ const Weather = ({ weatherData }) => {
         </div>
         <div className="weather-temp">
           {weatherIcon(forecast.weather_state_abbr)}
-          <div> {formatNumber(forecast.the_temp)}°C</div>
+          <div>{formatNumber(forecast.the_temp)}°C</div>
         </div>
         <div className="weather-name">{forecast.weather_state_name}</div>
-        <div> Max: {formatNumber(forecast.max_temp)}°C</div>
+        <div>Max: {formatNumber(forecast.max_temp)}°C</div>
         <div>Min: {formatNumber(forecast.min_temp)}°C</div>
       </div>
     </>

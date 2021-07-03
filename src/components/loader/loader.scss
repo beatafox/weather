@@ -1,11 +1,12 @@
+@import "../../assets/colors";
 .loader-wrapper {
   display: flex;
   justify-content: center;
   padding-top: 40%;
 
   .loader {
-    border: 15px solid lightblue;
-    border-top: 15px solid lightseagreen;
+    border: 15px solid $blue;
+    border-top: 15px solid $green;
     border-radius: 50%;
     width: 100px;
     height: 100px;

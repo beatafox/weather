@@ -1,6 +1,7 @@
+@import "./assets/colors";
 body {
   line-height: 1.5em;
-  background: #333;
+  background: $dark;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
