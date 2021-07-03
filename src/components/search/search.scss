@@ -1,0 +1,37 @@
+@import "../../assets/fonts/fonts";
+.search-wrapper {
+  color: lightseagreen;
+  text-align: center;
+  font-family: $caviarDreams;
+  .search-field {
+    margin-bottom: 20px;
+    .search-input {
+      border: 1px solid lightseagreen;
+      background-color: unset;
+      line-height: 2em;
+      font-family: $caviarDreams;
+      color: lightseagreen;
+      &:focus-visible {
+        outline: unset;
+      }
+    }
+  }
+  .search-results {
+    margin: 0 auto;
+    max-width: 500px;
+    .search-item {
+      display: inline-flex;
+      > button {
+        margin: 16px;
+        font-size: 16px;
+        color: rosybrown;
+        border: unset;
+        background-color: unset;
+        font-family: $caviarDreams;
+        &:focus-visible {
+          outline: unset;
+        }
+      }
+    }
+  }
+}
