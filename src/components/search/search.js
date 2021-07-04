@@ -30,6 +30,9 @@ const Search = ({ setWeatherData }) => {
       .then((res) => res.json())
       .then((data) => {
         setWeatherData(data);
+        // clear search
+        setTerm("");
+        setResults([]);
       })
       .catch((e) => {
         console.log(e);
