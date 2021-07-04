@@ -2,21 +2,29 @@
 @import "../../assets/colors";
 
 .weather-wrapper {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px auto;
   color: $green;
   text-align: center;
   font-family: $caviarDreams;
+
   .weather-location {
     color: $pink;
-  }
-  .weather-temp {
+    text-align: center;
     font-size: 30px;
-    display: inline-flex;
-    align-items: center;
+    margin-bottom: 30px;
   }
+  .weather-card {
+    display: inline-block;
+    margin: 0 15px;
 
-  .weather-name {
-    font-size: 20px;
+    .weather-temp {
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .weather-name {
+      font-size: 20px;
+    }
   }
 }
